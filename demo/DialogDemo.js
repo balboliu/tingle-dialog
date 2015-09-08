@@ -81,9 +81,7 @@ class Demo extends React.Component {
             },{
                 children:  '异步',
                 callback() {
-                    setTimeout( function () {
-                        t.refs.mainDialog.hide()
-                    }, 2000);
+                    setTimeout(() => t.refs.mainDialog.hide(), 2000);
                     return false;
                 }
              },{
@@ -95,7 +93,7 @@ class Demo extends React.Component {
             }];
         let popButton = [{
             children: '测试',
-            callback: function () {
+            callback() {
                 console.log('pop button');
             },
             primary: true

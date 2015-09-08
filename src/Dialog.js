@@ -50,9 +50,7 @@ class Dialog extends React.Component {
     render() {
         let t = this;
         let btn = '';
-        let {
-            className, show, width, ...other
-        } = t.props;
+        let {className, show, width, ...other} = t.props;
         let title = t.state.title;
         let buttons = t.state.buttons;
         let classSet = {
@@ -108,17 +106,16 @@ Dialog.propTypes = {
 }
 
 
-var WRAPPER_ID = '__TingleGlobalDialog__';
-var doc = document;
+let WRAPPER_ID = '__TingleGlobalDialog__';
+let doc = document;
 
 Dialog.global = null;
 
-var show = (options) => {
+let show = (options) => {
     // 只有首次全局调用时，才会创建全局实例
     if (!Dialog.global) {
-        var wrapper = doc.getElementById(WRAPPER_ID);
-        var {...other
-        } = options;
+        let wrapper = doc.getElementById(WRAPPER_ID);
+        let {...other} = options;
 
         if (!wrapper) {
             wrapper = doc.createElement('div');
